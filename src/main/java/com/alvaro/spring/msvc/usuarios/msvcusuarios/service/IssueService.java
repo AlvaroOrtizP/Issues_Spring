@@ -1,12 +1,10 @@
 package com.alvaro.spring.msvc.usuarios.msvcusuarios.service;
 
 
-import com.alvaro.spring.msvc.usuarios.msvcusuarios.model.dto.Issue;
+import com.alvaro.spring.msvc.usuarios.msvcusuarios.mapper.IssueMapper;
 import com.alvaro.spring.msvc.usuarios.msvcusuarios.model.entity.IssueEntity;
 import com.alvaro.spring.msvc.usuarios.msvcusuarios.repository.IssueRepository;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -16,8 +14,11 @@ import java.util.List;
 @Transactional(readOnly = true)
 public class IssueService {
     private final IssueRepository repository;
-    public IssueService(IssueRepository repository) {
+
+    private final IssueMapper issueMapper;
+    public IssueService(IssueRepository repository, IssueMapper issueMapper) {
         this.repository = repository;
+        this.issueMapper = issueMapper;
     }
 
     public Page<IssueEntity> customFind(){
@@ -27,6 +28,7 @@ public class IssueService {
 
     public List<IssueEntity> findAll(){
         List<IssueEntity> lista = repository.findAll();
+
         return lista;
     }
 }

@@ -1,10 +1,7 @@
-package com.alvaro.spring.msvc.usuarios.msvcusuarios.controller;
+package com.alvaro.spring.msvc.usuarios.msvcusuarios.web;
 
-import com.alvaro.spring.msvc.usuarios.msvcusuarios.model.dto.Issue;
 import com.alvaro.spring.msvc.usuarios.msvcusuarios.model.entity.IssueEntity;
 import com.alvaro.spring.msvc.usuarios.msvcusuarios.service.IssueService;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

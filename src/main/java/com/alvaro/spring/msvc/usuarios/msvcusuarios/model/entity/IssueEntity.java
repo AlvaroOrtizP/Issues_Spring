@@ -16,6 +16,8 @@ public class IssueEntity {
     private boolean resuelta;
     private double gravedad;
     private String responsable;
+
+    @Column(name = "fecha_Creacion")
     private Date fechaCreacion;
     private String observaciones;
 
